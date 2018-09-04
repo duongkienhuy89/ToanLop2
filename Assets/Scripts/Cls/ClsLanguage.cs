@@ -4,16 +4,7 @@ using System.Collections;
 public class ClsLanguage {
 
 
-    public static string doThongBao()
-    {
-        string vaothi = "Bạn đã hết lượt chơi miễn phí ! \n\n Để tiếp tục chơi xin vui lòng Kích Hoạt Vip!";
-        if (GameController.instance.tienganh)
-        {
-            vaothi = "To continue playing please activate the Vip";
-        }
 
-        return vaothi;
-    }
 
     public static string doContenQuangCao()
     {
@@ -452,10 +443,10 @@ public class ClsLanguage {
     }
     public static string doContenVip()
     {
-        string vaothi = "1.Bạn Chơi được tất cả 20 vòng thi. \n\n 2.Bạn có thể nhận được câu trả lời đầy đủ cho các đáp án sai tại bài thi Đỉnh núi trí tuệ.\n\n (Liên Hệ: Balo - 01647778420)";
+		string vaothi = "1.Bạn không bị làm phiền bởi quảng cáo. \n\n 2.Bạn có thể nhận được câu trả lời đầy đủ cho các đáp án sai tại bài thi Đỉnh núi trí tuệ.\n\n (Liên Hệ: Balo - 01647778420)";
         if (GameController.instance.tienganh)
         {
-            vaothi = "1.Played all 20 levels.. \n\n 2.You can get the complete answer for the wrong answer in test Intellectual peaks.";
+			vaothi = "1.Play Game without ever seeing an Ad \n\n 2.You can get the complete answer for the wrong answer in test Intellectual peaks.";
         }
 
         return vaothi;
