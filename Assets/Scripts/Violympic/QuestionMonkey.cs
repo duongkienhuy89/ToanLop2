@@ -77,6 +77,8 @@ public class QuestionMonkey : MonoBehaviour {
 
     void btnOnClick_Next()
     {
+		try
+		{
         if (currentState == State.InGame1)
         {
             if (buoc < 4)
@@ -94,6 +96,12 @@ public class QuestionMonkey : MonoBehaviour {
 
             XuLy.transform.position = respawn.transform.position;
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 
     }
 
@@ -917,6 +925,8 @@ public class QuestionMonkey : MonoBehaviour {
 
     void doXuLy(SpItemMonkey bt)
     {
+		try
+		{
         if (currentState == State.InGame1)
         {
             if (bt.Trangthai == true)
@@ -931,6 +941,12 @@ public class QuestionMonkey : MonoBehaviour {
                 StartCoroutine(WaitTimeXuLyTT(1f, bt));
             }
         }
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
         
     }
 
@@ -1314,9 +1330,17 @@ public class QuestionMonkey : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		try
+		{
         btnNext.OnClick += btnOnClick_Next;
         positionStartX = respawn.transform.position.x;
         txtLoading.text = ClsLanguage.doLoading();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 	
 	// Update is called once per frame

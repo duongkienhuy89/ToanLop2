@@ -17,6 +17,8 @@ public class StopBangNhau : MonoBehaviour {
 
     void btnContinute_OnClick()
     {
+		try
+		{
         PopUpController.instance.HideStopBangNhau();
         if (GameController.instance.level < 4)
         {
@@ -27,14 +29,28 @@ public class StopBangNhau : MonoBehaviour {
             GameController.instance.ShowLevel3();
         }
         SoundManager.Instance.rePlayBGMusic();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
 	// Use this for initialization
 	void Start () {
+		try
+		{
         btnContinute.OnClick += btnContinute_OnClick;
         txtTitle.text = ClsLanguage.doTitleCapBangNhau();
         txtHoanThanh.text = ClsLanguage.doHoanThanhBaiThi();
         btnContinute.gameObject.transform.GetChild(0).GetComponent<tk2dTextMesh>().text = ClsLanguage.doContinute();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 	
 	// Update is called once per frame

@@ -17,6 +17,8 @@ public class StopGame : MonoBehaviour {
 
     void onClick_Continute()
     {
+		try
+		{
         if (GameController.instance.checkvip != 10)
         {
             ShowAdsInterstitial();
@@ -33,6 +35,12 @@ public class StopGame : MonoBehaviour {
         }
         GameController.instance.sumCoin = 0;
         GameController.instance.sumTime = 0;
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
 
@@ -140,11 +148,18 @@ public class StopGame : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		try
+		{
         btnContinute.OnClick += onClick_Continute;
         btnContinute.gameObject.transform.GetChild(0).GetComponent<tk2dTextMesh>().text = ClsLanguage.doContinute();
         txtTitle.text = ClsLanguage.doTongKet();
         LoadAdsInterstitial();
+		}
+		catch (System.Exception)
+		{
 
+			throw;
+		}
        
 	}
 	

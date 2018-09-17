@@ -11,12 +11,22 @@ public class StartGame : MonoBehaviour {
 
     void onClick_Back()
     {
+		try
+		{
         PopUpController.instance.HideStartGame();
         PopUpController.instance.ShowLevel();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
 
     void onClick_VaoThi()
     {
+		try
+		{
         PopUpController.instance.HideStartGame();
       
 
@@ -25,6 +35,12 @@ public class StartGame : MonoBehaviour {
       
 
         SoundManager.Instance.PlayAudioChoiTiep();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     }
     public void setData()
     {
@@ -34,11 +50,19 @@ public class StartGame : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		try
+		{
         btnVaoThi.OnClick += onClick_VaoThi;
         btnBack.OnClick += onClick_Back;
         
         txtContent.text = ClsLanguage.doContentBatDau();
         txtPlay.text = ClsLanguage.doVaoThi();
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
 	}
 	
 	// Update is called once per frame

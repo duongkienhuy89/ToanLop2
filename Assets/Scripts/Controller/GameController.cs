@@ -223,12 +223,18 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-
+		try
+		{
         stSumcoin = DataManager.GetHightStringCoin();
         mang = stSumcoin.Split('+');
         
         StartCoroutine(WaitTimeLoadData());
-      
+		}
+		catch (System.Exception)
+		{
+
+			throw;
+		}
     
 	}
 
